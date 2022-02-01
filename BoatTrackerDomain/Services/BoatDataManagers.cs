@@ -34,7 +34,6 @@ namespace BoatTrackerDomain.Services
             if (boatDto != null)
             {
                 var existingBoat = await _boatTrackerContext.Boats
-                .Include(boat => boat.BoatState)
                 .SingleOrDefaultAsync(b => b.HIN == boatDto.HIN);
 
                 if (existingBoat != null)
