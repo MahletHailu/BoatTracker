@@ -22,5 +22,7 @@
     <ProjectReference Include="..\BoatTrackerDomain\BoatTrackerDomain.csproj" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties properties_4servicedependencies_4fishfrytoursboattrackerservice_x0020_-_x0020_web_x0020_deploy_4profile_1arm_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
 
 </Project>

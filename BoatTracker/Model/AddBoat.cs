@@ -7,7 +7,7 @@ namespace BoatTracker.Service.Model
 {
     public class AddBoat
     {
-        public string HID { get; set; }
+        public string HIN { get; set; }
         public string Name { get; set; }
     }
 }

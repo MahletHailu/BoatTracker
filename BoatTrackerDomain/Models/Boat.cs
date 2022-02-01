@@ -7,7 +7,7 @@ namespace BoatTrackerDomain.Models
 {
     public partial class Boat
     {
-        public string HID { get; set; }
+        public string HIN { get; set; }
         public string Name { get; set; }
         public byte State { get; set; }
 

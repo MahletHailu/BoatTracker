@@ -39,12 +39,12 @@ namespace BoatTracker.Service.Controllers
         }
 
         // GET api/api/boats/ABC67689B606
-        [HttpGet("{HID}", Name = "GetBoatByHID")]
-        public async Task<IActionResult> Get(string HID)
+        [HttpGet("{HIN}", Name = "GetBoatByHIN")]
+        public async Task<IActionResult> Get(string HIN)
         {
             try
             {
-                var boat = await _dataRepository.GetAsync(HID);
+                var boat = await _dataRepository.GetAsync(HIN);
 
                 return Ok(boat);
             }
@@ -60,15 +60,15 @@ namespace BoatTracker.Service.Controllers
         {
             try
             {
-                if (!string.IsNullOrEmpty(boatDto?.HID))
+                if (!string.IsNullOrEmpty(boatDto?.HIN))
                 {
                     _dataRepository.Add(boatDto);
 
-                    return CreatedAtRoute("GetBoatByHID", new { HID = boatDto.HID }, null);
+                    return CreatedAtRoute("GetBoatByHIN", new { HIN = boatDto.HIN }, null);
                 }
                 else
                 {
-                    return BadRequest("HID can not be null.");
+                    return BadRequest("HIN can not be null.");
                 }
             }
             catch (Exception ex)
@@ -83,15 +83,15 @@ namespace BoatTracker.Service.Controllers
         {
             try
             {
-                if (!string.IsNullOrEmpty(boatDto?.HID))
+                if (!string.IsNullOrEmpty(boatDto?.HIN))
                 {
                     return await _dataRepository.UpdateAsync(boatDto) ?
-                         CreatedAtRoute("GetBoatByHID", new { HID = boatDto.HID }, null)
+                         CreatedAtRoute("GetBoatByHIN", new { HIN = boatDto.HIN }, null)
                          : BadRequest("Data couldn't be updated. Please make sure you're updating an existing data and the format is correct.");
                 }
                 else
                 {
-                    return BadRequest("HID can not be null.");
+                    return BadRequest("HIN can not be null.");
                 }
             }
             catch (Exception ex)

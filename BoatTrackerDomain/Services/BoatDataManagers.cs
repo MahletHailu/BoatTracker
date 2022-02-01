@@ -35,7 +35,7 @@ namespace BoatTrackerDomain.Services
             {
                 var existingBoat = await _boatTrackerContext.Boats
                 .Include(boat => boat.BoatState)
-                .SingleOrDefaultAsync(b => b.HID == boatDto.HID);
+                .SingleOrDefaultAsync(b => b.HIN == boatDto.HIN);
 
                 if (existingBoat != null)
                 {
@@ -55,11 +55,11 @@ namespace BoatTrackerDomain.Services
             throw new NotImplementedException();
         }
 
-        public async Task<BoatDto> GetAsync(string HID)
+        public async Task<BoatDto> GetAsync(string HIN)
         {
             var boat = await _boatTrackerContext.Boats
                 .Include(boat => boat.BoatState)
-                .SingleOrDefaultAsync(b => b.HID == HID);
+                .SingleOrDefaultAsync(b => b.HIN == HIN);
 
             return MapToDto(boat);
         }
@@ -78,7 +78,7 @@ namespace BoatTrackerDomain.Services
         {
             var boatDto = (boat != null) ? new BoatDto
             {
-                HID = boat?.HID,
+                HIN = boat?.HIN,
                 Name = boat?.Name,
                 BoatState = new() {
                     Id = boat?.BoatState?.Id ?? 0,
@@ -94,7 +94,7 @@ namespace BoatTrackerDomain.Services
         {
             var boat = (boatDto != null) ? new Boat
             {
-                HID = boatDto?.HID,
+                HIN = boatDto?.HIN,
                 Name = boatDto?.Name,
                 State = Convert.ToByte(boatDto?.BoatState?.Id?? 0),
             }

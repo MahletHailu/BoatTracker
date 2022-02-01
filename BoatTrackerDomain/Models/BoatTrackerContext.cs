@@ -26,14 +26,14 @@ namespace BoatTrackerDomain.Models
 
             modelBuilder.Entity<Boat>(entity =>
             {
-                entity.HasKey(e => e.HID)
+                entity.HasKey(e => e.HIN)
                     .IsClustered(false);
 
                 entity.HasIndex(e => e.Name, "IX_Boat_Name");
 
-                entity.Property(e => e.HID)
+                entity.Property(e => e.HIN)
                     .HasMaxLength(50)
-                    .HasColumnName("HID");
+                    .HasColumnName("HIN");
 
                 entity.Property(e => e.Name)
                     .IsRequired()
