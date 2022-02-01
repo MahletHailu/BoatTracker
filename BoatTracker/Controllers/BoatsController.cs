@@ -55,7 +55,7 @@ namespace BoatTracker.Service.Controllers
         }
 
         // POST api/boats/
-        [HttpPost]
+        [HttpPost(Name = "createABoat")]
         public IActionResult Post([FromBody] BoatDto boatDto)
         {
             try
@@ -77,8 +77,8 @@ namespace BoatTracker.Service.Controllers
             }
         }
 
-        // PUT api/boats/ABC67689B606
-        [HttpPut("{id}")]
+        // PUT api/boats/
+        [HttpPut(Name = "updateABoat")]
         public async Task<IActionResult> PutAsync([FromBody] BoatDto boatDto)
         {
             try
