@@ -35,12 +35,15 @@ The live version of this service is hosted live at https://fishfrytoursboattrack
 1. Get all Boats
 
  url: https://fishfrytoursboattrackerservice.azurewebsites.net/api/boats
+ 
  Method: Get
  
  2. Get a Boat
 
  url: https://fishfrytoursboattrackerservice.azurewebsites.net/api/boats/{HIN}
+ 
  Method: Get
+
  Example: https://fishfrytoursboattrackerservice.azurewebsites.net/api/boats/ABC123asd45D404
  
   ABC123asd45D404 refers to the HIN.
@@ -48,8 +51,10 @@ The live version of this service is hosted live at https://fishfrytoursboattrack
 2. Add a boat
 
  url: https://fishfrytoursboattrackerservice.azurewebsites.net/api/boats
- Method: Post
- sample Body:   {
+
+Method: Post
+
+sample Body:   {
                   "hin": "XWE12345765",
                   "name": "Tooth Ferry"
                  }
@@ -60,7 +65,9 @@ The live version of this service is hosted live at https://fishfrytoursboattrack
  2. Update a boat
 
  url: https://fishfrytoursboattrackerservice.azurewebsites.net/api/boats
+
  Method: Put
+ 
  sample Body:  {
                     "hin": "ABC12345D404",
                     "name": "Last Dance",
