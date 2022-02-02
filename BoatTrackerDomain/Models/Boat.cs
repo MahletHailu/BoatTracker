@@ -7,10 +7,30 @@ namespace BoatTrackerDomain.Models
 {
     public partial class Boat
     {
+        /// <summary>
+        /// HIN: Hull Identification Number
+        /// Identification of a boat
+        /// </summary>
         public string HIN { get; set; }
+
+        /// <summary>
+        /// Human readable name of a boat
+        /// </summary>
         public string Name { get; set; }
 
+        /// <summary>
+        /// State of a boat
+        /// 0: Docked
+        /// 1:Outbound to Sea
+        /// 2:Inbound to Harbor
+        /// 3: Maintenance
+        /// </summary>
         private byte _state;
+
+        /// <summary>
+        /// public setter and getter for state
+        /// Validation: State can't be less than 0 or greater than 3
+        /// </summary>
         public byte State
         {
             get

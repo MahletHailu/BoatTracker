@@ -7,6 +7,10 @@ namespace BoatTrackerDomain.Models
 {
     public partial class State
     {
+        /// <summary>
+        /// number identification of state 
+        /// 0, 1, 2, 3
+        /// </summary>
         private byte _id;
         public byte Id
         {
@@ -26,6 +30,10 @@ namespace BoatTrackerDomain.Models
             }
         }
 
+        /// <summary>
+        /// String representation of state
+        /// Docked, Outbound to Sea, Inbound to Harbor, Maintenance
+        /// </summary>
         public string Description { get; set; }
         public virtual ICollection<Boat> Boats { get; set; }
         public State()

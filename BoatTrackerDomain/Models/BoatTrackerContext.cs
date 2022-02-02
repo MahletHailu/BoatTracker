@@ -17,7 +17,14 @@ namespace BoatTrackerDomain.Models
         {
         }
 
+        /// <summary>
+        /// Boats
+        /// </summary>
         public virtual DbSet<Boat> Boats { get; set; }
+
+        /// <summary>
+        /// Boat states
+        /// </summary>
         public virtual DbSet<State> States { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -20,8 +20,11 @@ namespace BoatTracker.Service.Controllers
                            ?? throw new System.ArgumentNullException(nameof(dataRepository));
         }
 
-        // GET: api/boats
-        //Gets all boats
+        /// <summary>
+        /// GET: api/boats
+        //  Gets all boats 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet(Name = "GetAllBoats")]
         public async Task<IActionResult> Get()
         {
@@ -38,7 +41,13 @@ namespace BoatTracker.Service.Controllers
 
         }
 
-        // GET api/api/boats/ABC67689B606
+
+        /// <summary>
+        /// GET api/api/boats/ABC67689B606
+        /// Gets a boat by HIN(Hull Indentification Number)
+        /// </summary>
+        /// <param name="HIN"></param>
+        /// <returns></returns>
         [HttpGet("{HIN}", Name = "GetBoatByHIN")]
         public async Task<IActionResult> Get(string HIN)
         {
@@ -54,7 +63,14 @@ namespace BoatTracker.Service.Controllers
             }
         }
 
-        // POST api/boats/
+      
+        /// <summary>
+        ///  POST api/boats/
+        ///  Creates a new boat to the data store if it doesn't exist
+        ///  HIN can't be empty or duplicate HIN isn't permitted
+        /// </summary>
+        /// <param name="boatDto"></param>
+        /// <returns></returns>
         [HttpPost(Name = "createABoat")]
         public async Task<IActionResult> Post([FromBody] BoatDto boatDto)
         {
@@ -77,7 +93,15 @@ namespace BoatTracker.Service.Controllers
             }
         }
 
-        // PUT api/boats/
+
+        /// <summary>
+        /// PUT api/boats/
+        /// updated a boat
+        /// HIN must be existing
+        /// State can only be (0,1,2,3) 
+        /// </summary>
+        /// <param name="boatDto"></param>
+        /// <returns></returns>
         [HttpPut(Name = "updateABoat")]
         public async Task<IActionResult> PutAsync([FromBody] BoatDto boatDto)
         {
@@ -100,10 +124,16 @@ namespace BoatTracker.Service.Controllers
             }
         }
 
-        // DELETE api/boats/ABC12345D404
+        
+        /// <summary>
+        /// DELETE api/boats/ABC12345D404
+        /// Deletes a boat
+        /// </summary>
+        /// <param name="id"></param>
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            throw new NotImplementedException();
         }
     }
 }
