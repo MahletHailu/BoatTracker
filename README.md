@@ -71,6 +71,21 @@ The live version of this service is hosted live at https://fishfrytoursboattrack
                 }
   Requirement: boatState id can only be a number 0 upto 3.  
   
-  #Testing
+ # Testing
+ 
   
-  Unit tests and integration test are included but they are incomplete. There is an automated functional tests written in Postman
+  Unit tests and integration test projects are included but they are incomplete. I usually use tools like FineCodeCoverage to find out what the current code coverage and aim for atleast 90%
+  
+  There is an automated functional tests written in Postman. Link : https://www.postman.com/solarismci/workspace/boattrackerapitesting/collection/6710969-a33b3f70-80d3-43d9-ac46-0b7fc3acc846
+
+
+ # Error Handling
+ 
+ What I would like to add is to map all errors to appropriate http request statuses. Http statuses can easily inform the user if the error is from an invalid input or just a an internal server errror.
+ 
+  # Documentation
+  
+  Documentation comments have been added to API endpoint methods, models and their properties manually. What I would lik to add is create a API specification documentaion in detail using tools like Swagger. 
+  
+ 
+ 
