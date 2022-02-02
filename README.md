@@ -88,4 +88,6 @@ The live version of this service is hosted live at https://fishfrytoursboattrack
   Documentation comments have been added to API endpoint methods, models and their properties manually. What I would lik to add is create a API specification documentaion in detail using tools like Swagger. 
   
  
- 
+   # Tools used
+   
+   Visual Studio 2029, MS SQL Management tool, Asure DevOps, Azure AppService
