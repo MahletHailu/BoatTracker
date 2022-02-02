@@ -28,13 +28,14 @@ namespace BoatTrackerDomain.Models
                 _state = value;
             }
         }
+
         public virtual State BoatState { get; set; }
 
         public Boat()
         {
             HIN = string.Empty;
             Name = string.Empty;
-            State = 0;
+            State = Convert.ToByte(0);
         }
     }
 }

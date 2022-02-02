@@ -56,13 +56,13 @@ namespace BoatTracker.Service.Controllers
 
         // POST api/boats/
         [HttpPost(Name = "createABoat")]
-        public IActionResult Post([FromBody] BoatDto boatDto)
+        public async Task<IActionResult> Post([FromBody] BoatDto boatDto)
         {
             try
             {
                 if (!string.IsNullOrEmpty(boatDto?.HIN))
                 {
-                    _dataRepository.Add(boatDto);
+                    await _dataRepository.AddAsync(boatDto);
 
                     return CreatedAtRoute("GetBoatByHIN", new { HIN = boatDto.HIN }, null);
                 }

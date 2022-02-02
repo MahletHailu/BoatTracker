@@ -7,7 +7,7 @@ namespace BoatTrackerDomain.Repository
     {
         Task<IEnumerable<TDto>> GetAllAsync();
         Task<TDto> GetAsync(string id);
-        void Add(TDto dto);
+        Task AddAsync(TDto dto);
         Task<bool> UpdateAsync(TDto dto);
         void Delete(TEntity entity);
     }

@@ -80,7 +80,7 @@ namespace UnitTests.Model
         }
 
         [TestCase(10)]
-        [TestCase(-1)]
+        [TestCase(5)]
         public void InvalidStateValueShouldThrowException(int state)
         {
             var invalidState = Convert.ToByte(state);

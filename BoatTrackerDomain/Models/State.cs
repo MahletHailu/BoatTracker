@@ -7,14 +7,31 @@ namespace BoatTrackerDomain.Models
 {
     public partial class State
     {
-        public State()
+        private byte _id;
+        public byte Id
         {
-            Boats = new HashSet<Boat>();
+            get
+            {
+                return this._id;
+            }
+
+            set
+            {
+                if (value < 0 || value > 3)
+                {
+                    throw new ArgumentOutOfRangeException("State has to be between 0 and 3");
+                }
+
+                _id = value;
+            }
         }
 
-        public byte Id { get; set; }
         public string Description { get; set; }
-
         public virtual ICollection<Boat> Boats { get; set; }
+        public State()
+        {
+            Id = Convert.ToByte(0);
+            Description = string.Empty;
+        }
     }
 }
