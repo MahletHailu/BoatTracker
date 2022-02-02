@@ -70,8 +70,13 @@ The live version of this service is hosted live at https://fishfrytoursboattrack
                     }
                 }
   Requirement: boatState id can only be a number 0 upto 3.  
+ 
+ # CI/CD
   
- # Testing
+  A project is set up in Azure DevOps: https://dev.azure.com/mahlethailu1/Fishfry%20Tours%20Boat%20Tracker/_git/Fishfry%20Tours%20Boat%20Tracker
+  Microsoft has disabled the free grant of parallel jobs for public projects so my builds aren't successful at the moment. 
+
+# Testing
  
   
   Unit tests and integration test projects are included but they are incomplete. I usually use tools like FineCodeCoverage to find out what the current code coverage and aim for atleast 90%
